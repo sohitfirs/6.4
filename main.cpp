@@ -19,16 +19,17 @@ main()
 	char rts[100];
 	gets(rts);
 	
-	char buf;
-	int a = 0;
+	int len = strlen(rts);
+	int buf, i, j;
 	
-	for(int i=strlen(rts); i/2>1; i--)
+	for (i=0, j=len-1; i<j; i++, j--)
 	{
-		buf=rts[i-1];
-		rts[i-1]=rts[a];
-		rts[a]=buf;
-		a++;
+		buf=rts[i];
+		rts[i]=rts[j];
+		rts[j]=buf;
 	}
+	
+	
 	puts(rts);
 	system("pause");
 }
